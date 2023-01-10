@@ -96,6 +96,7 @@ In [Qlik Documentation](https://qlik.dev/tutorials/implement-jwt-authorization) 
 16. Modify vars.js at ```mashup``` project
     ```sh
     const tenant = 'https://<tenant>.<region>.qlikcloud.com';
+    const jwtEndpoint = 'https://<aws_api_gateway_url>/prod/jwt';
     const webInt = '<id from Web config on Qlik Cloud configured in step X>';
     const appId = '<app id used on mashup>';
     const sheetId = '<sheet ip from app>';
@@ -113,3 +114,4 @@ In [Qlik Documentation](https://qlik.dev/tutorials/implement-jwt-authorization) 
 ## **How to know about User Analyzer consuming?**
 
 https://community.qlik.com/t5/Support-Updates-Blog/Latest-Version-of-Entitlement-Analyzer-for-Qlik-Sense-Enterprise/ba-p/1817404
+
