@@ -1,0 +1,42 @@
+.grid-container {
+    height: 685px;
+    display: grid;
+    grid-row-gap: 1ch;
+    grid-column-gap: 1ch;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    grid-template-rows: 4ch auto minmax(10px, 60px);
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.currSel {
+    grid-column: 1/ span 20;
+    grid-row: 1;
+    max-height: 50px !important;
+}
+
+.filter {
+    grid-column: 1 / span 4;
+    grid-row: auto / span 4;
+    max-width: 274px !important;
+    padding: 0px !important;
+}
+
+.bar {
+    grid-column: 5 / span 6;
+    grid-row: 2 / span 4;
+}
+
+.bullet {
+    grid-column: 5 / span 6;
+    grid-row: 6 / span 4;
+}
+
+.table {
+    grid-column: 12 / span 10;
+    grid-row: 2 / span 8;
+}
+
+.grid-item {
+    min-width: 50px !important;
+}
