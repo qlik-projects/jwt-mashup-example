@@ -11,7 +11,7 @@ The instructions of this documentation is helper to create a demo on the local m
 1. gen-jwt project: generate jwt example
 2. mashup project: simple mashup example with iframe
 
-These project are not integrated automatically. It is necessary to copy token generated from gen-jwt and use it on the mashup project or on Postman endpoints.
+These project are just code example, so it is not integrated automatically. It is necessary to copy token generated from gen-jwt and use it on the mashup project or on Postman endpoints.
 
 ## **Use Case**
 
@@ -96,7 +96,6 @@ In [Qlik Documentation](https://qlik.dev/tutorials/implement-jwt-authorization) 
 13. Modify vars.js at ```mashup``` project
     ```sh
     const tenant = 'https://<tenant>.<region>.qlikcloud.com';
-    const jwtEndpoint = 'https://<aws_api_gateway_url>/prod/jwt';
     const webInt = '<id from Web config on Qlik Cloud configured in step X>';
     const appId = '<app id used on mashup>';
     const sheetId = '<sheet ip from app>';
