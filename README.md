@@ -8,10 +8,10 @@ The instructions of this documentation is helper to create a demo on the local m
 
 ## **How this project works?**
 
-1. gen-jwt project: generate jwt example
-2. mashup project: simple mashup example with iframe
+* gen-jwt project: generate jwt example
+* mashup project: simple mashup example with iframe
 
-These project are not integrated automatically. It is necessary to copy token generated from gen-jwt and use it on the mashup project or on Postman endpoints.
+These project are just code example, so it is not integrated automatically. It is necessary to copy token generated from gen-jwt and use it on the mashup project or on Postman endpoints.
 
 ## **Use Case**
 
@@ -68,32 +68,32 @@ In [Qlik Documentation](https://qlik.dev/tutorials/implement-jwt-authorization) 
     npm install --global yarn
     ````
 
-9. Move the private.key.txt file generated in step 2 to the main folder at ```gen-jwt``` project
+11. Move the private.key.txt file generated in step 2 to the main folder at ```gen-jwt``` project
 
-9. Modify config.js at ```gen-jwt``` project
+12. Modify config.js at ```gen-jwt``` project
     ```sh
     qlikWebIntegrationId: '<Web Integration ID configured step 4>',
     issuer: '<Issuer configured step 3>',
     keyid: '<keyid configured step 3>'
     ````
 
-10. Modify server.js (just if you are using a existing user on Qlik Cloud; if you are testing with Anonymous User, skip this step)
+13. Modify server.js (just if you are using a existing user on Qlik Cloud; if you are testing with Anonymous User, skip this step)
     ```sh
     name: 'User Name';
     email: 'Email';
     ````
 
-11. Start Project: 
+14. Start Project: 
     ```sh
     yarn start
     ````
-12. Execute endpoint to get JWT:
+15. Execute endpoint to get JWT:
     ```http://localhost:8080/tokenUser```
     ```http://localhost:8080/tokenAnon```
 
 #### **On Mashup Project (local machine)**
 
-13. Modify vars.js at ```mashup``` project
+16. Modify vars.js at ```mashup``` project
     ```sh
     const tenant = 'https://<tenant>.<region>.qlikcloud.com';
     const jwtEndpoint = 'https://<aws_api_gateway_url>/prod/jwt';
@@ -102,16 +102,15 @@ In [Qlik Documentation](https://qlik.dev/tutorials/implement-jwt-authorization) 
     const sheetId = '<sheet ip from app>';
     const token = '<copy token from gen-jwt project step 12>';    
     ````
-16. Create certificate for mashup
+17. Create certificate for mashup
     ```sh
     openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
     ```
-17. Include mashup fqdn.domain in the host file. In our case jwt-test.qlik-tech.com
-18. Run mashup code at localhost by https://jwt-test.qliktech.com
+18. Include mashup fqdn.domain in the host file. In our case jwt-test.qlik-tech.com
+19. Run mashup code at localhost by https://jwt-test.qliktech.com
     ```sh
     npx http-server -p 443 -S -c -1
     ```
 ## **How to know about User Analyzer consuming?**
 
 https://community.qlik.com/t5/Support-Updates-Blog/Latest-Version-of-Entitlement-Analyzer-for-Qlik-Sense-Enterprise/ba-p/1817404
-
